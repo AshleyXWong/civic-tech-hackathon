@@ -9,5 +9,7 @@ frequency = head(d$freq, n = 52)
 ggplot(d, aes(descriptions, frequency)) +
     geom_bar(stat = 'identity') +
     ggtitle('Histogram of Infraction Description') +
-    theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5)) + coord_cartesian(ylim = c(0, 150000))
+    theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5)) + 
+    coord_cartesian(ylim = c(0, 150000)) + 
+    theme(plot.margin = unit(c(1,1,1,1), "cm"))
 
