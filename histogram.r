@@ -1,6 +1,7 @@
 library(plyr)
 library(ggplot2)
 d = read.csv('Parking_Tags_Data_2016_1.csv')
+d <- subset(d, province == "ON")
 d = count(d, 'infraction_description')
 d = d[order(d$freq, decreasing=TRUE), ]
 d = head(d, n = 52)
