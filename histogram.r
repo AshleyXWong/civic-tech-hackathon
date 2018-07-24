@@ -1,3 +1,5 @@
+library(plyr)
+library(ggplot)
 d = read.csv('Parking_Tags_Data_2016_1.csv')
 d = count(data, 'infraction_description')
 d = d[order(d$freq, decreasing=TRUE), ]
@@ -8,3 +10,4 @@ ggplot(d, aes(descriptions, frequency)) +
     geom_bar(stat = 'identity') +
     ggtitle('Histogram of Infraction Description') +
     theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
+
